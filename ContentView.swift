@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     
+    // function who calculat if the chose if correct or not. It add 1 point is the awser is good and subtracted 1 if is wrong
+    
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
             scoreTitle = "Correct"
@@ -40,6 +42,8 @@ struct ContentView: View {
     
     var body: some View {
         
+        //Creat form picture, color & title
+        
         ZStack {
             Color.blue
             RadialGradient(stops: [
@@ -49,6 +53,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack {
                 Spacer()
+                //title & score presentation
                 Text("Guess the Flag")
                     .font(.largeTitle.weight(.bold))
                     .foregroundColor(.white)
